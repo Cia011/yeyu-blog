@@ -1,22 +1,27 @@
 import { ModalProvider } from '@/components/provider/modal-provider'
 import ReactQueryProvider from '@/components/provider/react-query-provider'
 import { Toaster } from '@/components/ui/sonner'
-import { noPermission } from '@/lib/auth'
 import AdminNavbar from '@/modules/admin/layout/admin-layout-header'
 import { SessionProvider } from 'next-auth/react'
 import { redirect } from 'next/navigation'
+import { auth } from '@/auth'
 
 export default async function AdminLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  if (await noPermission()) {
-    redirect('/')
+  const session = await auth()
+  
+  if (!session) {
+    redirect('/auth/sign-in')
   }
-
+  // // 添加角色权限检查
+  // if (session.user.role !== 'admin') {
+  //   redirect('/')
+  // }
   return (
-    <SessionProvider>
+    <SessionProvider session={session}>
       <ReactQueryProvider>
         <ModalProvider>
           <main className="flex flex-col min-h-screen max-w-screen dark:bg-black dark:text-white">

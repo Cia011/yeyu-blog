@@ -1,6 +1,6 @@
 'use client'
 
-import YeYuAvatar from '@/components/shared/yeyu-avatar'
+// import YeYuAvatar from '@/components/shared/yeyu-avatar'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,18 +18,20 @@ function AvatarDropdownMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center">
-        <YeYuAvatar />
+        设置
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="rounded-lg w-56">
         <DropdownMenuLabel className="p-1 flex gap-2 items-center">
-          <YeYuAvatar />
+          设置
           <section>
             <h3 className="font-mono">
-              {session?.user?.name || 'example'}
-              {' '}
+              {'名称:'}
+              {session?.user?.username || '管理员'}
+              
             </h3>
             <small className="font-thin">
-              {session?.user?.email || 'example@gmail.com'}
+              {'权限:'}
+              {session?.user?.role || ''}
             </small>
           </section>
         </DropdownMenuLabel>

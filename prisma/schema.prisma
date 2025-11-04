@@ -68,3 +68,13 @@ model Echo {
   content     String   @db.VarChar(100) // * ECHO_CONTENT_MAX_LENGTH
   createdAt   DateTime @default(now())
 }
+
+model User {
+  id       Int    @id @default(autoincrement())
+  username String @unique @db.VarChar(50)
+  password String @db.VarChar(255) // 存储bcrypt哈希密码
+  role     String @default("admin") // 可以扩展为多角色系统
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
