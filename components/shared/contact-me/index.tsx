@@ -2,21 +2,21 @@ import Link from 'next/link'
 
 const ExternalLinks = [
   {
-    name: 'GitHub',
-    url: 'https://github.com/NeilYeTAT',
+    name: 'AD钙的小屋',
+    url: 'https://xn--ad-036g.xyz/',
   },
-  {
-    name: 'bilibili',
-    url: 'https://space.bilibili.com/1859558916',
-  },
-  {
-    name: '掘金',
-    url: 'https://juejin.cn/user/64204896208252',
-  },
-  {
-    name: 'Gmail',
-    url: 'mailto:nearjilt@gmail.com',
-  },
+  // {
+  //   name: 'bilibili',
+  //   url: 'https://space.bilibili.com/1859558916',
+  // },
+  // {
+  //   name: '掘金',
+  //   url: 'https://juejin.cn/user/64204896208252',
+  // },
+  // {
+  //   name: 'Gmail',
+  //   url: 'mailto:nearjilt@gmail.com',
+  // },
 ] as const
 
 export default function ContactMe() {
