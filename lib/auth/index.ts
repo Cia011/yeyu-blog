@@ -1,5 +1,4 @@
 import { auth } from '@/auth'
-import { ADMIN_EMAILS } from '@/config/constant'
 
 export async function noPermission() {
   const session = await auth()

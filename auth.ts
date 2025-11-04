@@ -1,7 +1,7 @@
+import { PrismaClient } from '@prisma/client'
+import bcrypt from 'bcryptjs'
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
-import bcrypt from 'bcryptjs'
-import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
@@ -11,7 +11,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       name: 'credentials',
       credentials: {
         username: { label: '用户名', type: 'text' },
-        password: { label: '密码', type: 'password' }
+        password: { label: '密码', type: 'password' },
       },
       async authorize(credentials) {
         if (!credentials?.username || !credentials?.password) {
@@ -19,7 +19,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         }
 
         const user = await prisma.user.findUnique({
-          where: { username: credentials.username as string }
+          where: { username: credentials.username as string },
         })
 
         if (!user) {
@@ -28,7 +28,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         const isPasswordValid = await bcrypt.compare(
           credentials.password as string,
-          user.password
+          user.password,
         )
 
         if (!isPasswordValid) {
@@ -38,10 +38,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         return {
           id: user.id.toString(),
           username: user.username,
-          role: user.role
+          role: user.role,
         }
-      }
-    })
+      },
+    }),
   ],
   pages: {
     signIn: '/auth/sign-in',
@@ -62,9 +62,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         session.user.role = token.role as string
       }
       return session
-    }
+    },
   },
   session: {
-    strategy: 'jwt'
-  }
+    strategy: 'jwt',
+  },
 })

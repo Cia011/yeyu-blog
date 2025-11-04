@@ -12,14 +12,9 @@ export default async function AdminLayout({
   children: React.ReactNode
 }) {
   const session = await auth()
-  
   if (!session) {
     redirect('/auth/sign-in')
   }
-  // // 添加角色权限检查
-  // if (session.user.role !== 'admin') {
-  //   redirect('/')
-  // }
   return (
     <SessionProvider session={session}>
       <ReactQueryProvider>

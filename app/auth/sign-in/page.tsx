@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
-import { signIn } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { AlertCircle, Eye, EyeOff, LogIn } from 'lucide-react'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export default function SignInPage() {
   const router = useRouter()
@@ -26,18 +26,21 @@ export default function SignInPage() {
       const result = await signIn('credentials', {
         username,
         password,
-        redirect: false
+        redirect: false,
       })
 
       if (result?.error) {
         setError('登录失败，请检查用户名和密码是否正确')
-      } else {
+      }
+      else {
         router.push('/admin')
         router.refresh()
       }
-    } catch (error) {
+    }
+    catch {
       setError('登录失败，请稍后重试')
-    } finally {
+    }
+    finally {
       setIsLoading(false)
     }
   }
@@ -50,7 +53,7 @@ export default function SignInPage() {
     <div className="min-h-screen flex items-center justify-center p-4 relative">
       {/* 全屏渐变背景 */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 -z-10"></div>
-      
+
       <div className="w-full max-w-md mx-auto">
         <Card className="w-full shadow-lg">
           <CardHeader className="space-y-1 text-center">
@@ -62,7 +65,7 @@ export default function SignInPage() {
               请输入您的管理员凭据以访问后台
             </CardDescription>
           </CardHeader>
-          
+
           <CardContent className="space-y-4">
             {error && (
               <div className="flex items-center gap-2 p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-md dark:bg-red-900/20 dark:text-red-400 dark:border-red-800">
@@ -70,7 +73,7 @@ export default function SignInPage() {
                 <span>{error}</span>
               </div>
             )}
-            
+
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
                 <Label htmlFor="username" className="text-sm font-medium">
@@ -80,14 +83,14 @@ export default function SignInPage() {
                   id="username"
                   type="text"
                   value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={e => setUsername(e.target.value)}
                   placeholder="请输入用户名"
                   required
                   disabled={isLoading}
                   className="transition-all duration-200 focus:ring-2 focus:ring-blue-500"
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm font-medium">
                   密码
@@ -95,9 +98,9 @@ export default function SignInPage() {
                 <div className="relative">
                   <Input
                     id="password"
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={e => setPassword(e.target.value)}
                     placeholder="请输入密码"
                     required
                     disabled={isLoading}
@@ -111,36 +114,40 @@ export default function SignInPage() {
                     onClick={togglePasswordVisibility}
                     disabled={isLoading}
                   >
-                    {showPassword ? (
-                      <EyeOff className="h-4 w-4 text-gray-500" />
-                    ) : (
-                      <Eye className="h-4 w-4 text-gray-500" />
-                    )}
+                    {showPassword
+                      ? (
+                          <EyeOff className="h-4 w-4 text-gray-500" />
+                        )
+                      : (
+                          <Eye className="h-4 w-4 text-gray-500" />
+                        )}
                   </Button>
                 </div>
               </div>
-              
-              <Button 
-                type="submit" 
+
+              <Button
+                type="submit"
                 disabled={isLoading || !username || !password}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 transition-all duration-200"
               >
-                {isLoading ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
-                    登录中...
-                  </>
-                ) : (
-                  <>
-                    <LogIn className="w-4 h-4 mr-2" />
-                    登录
-                  </>
-                )}
+                {isLoading
+                  ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+                        登录中...
+                      </>
+                    )
+                  : (
+                      <>
+                        <LogIn className="w-4 h-4 mr-2" />
+                        登录
+                      </>
+                    )}
               </Button>
             </form>
-            
+
             <div className="text-center text-sm text-gray-500 dark:text-gray-400 pt-4 border-t">
-              <p>默认管理员账号：admin / admin123</p>
+              <p>欢迎回家!!!</p>
             </div>
           </CardContent>
         </Card>

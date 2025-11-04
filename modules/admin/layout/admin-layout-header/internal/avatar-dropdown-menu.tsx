@@ -25,12 +25,12 @@ function AvatarDropdownMenu() {
           设置
           <section>
             <h3 className="font-mono">
-              {'名称:'}
+              名称:
               {session?.user?.username || '管理员'}
-              
+
             </h3>
             <small className="font-thin">
-              {'权限:'}
+              权限:
               {session?.user?.role || ''}
             </small>
           </section>
