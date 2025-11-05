@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   description: '分享生活日常',
   keywords: [
     '生活分享',
-    '阅读',
     'AD钙',
     'AD钙的个人博客',
     'AD钙的小屋',
