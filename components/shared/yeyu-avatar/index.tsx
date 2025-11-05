@@ -17,7 +17,7 @@ export default function YeYuAvatar({
       <Image
         src={
           session?.user?.image
-          || 'https://avatars.githubusercontent.com/u/140394258?v=4'
+          || 'config\img\avatar.webp'
         }
         alt="avatar"
         width={width}

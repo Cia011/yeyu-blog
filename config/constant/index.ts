@@ -8,8 +8,8 @@ export const ADMIN_EMAILS = process.env.NEXT_PUBLIC_ADMIN_EMAILS?.split(',')
 
 // * 元数据，SEO，网页关键字。。。
 export const metadata: Metadata = {
-  title: `AD钙的小屋 | 业余`,
-  description: '记录前端开发、技术文章与生活思考的博客站点',
+  title: `AD钙的小屋`,
+  description: '分享生活日常',
   keywords: [
     '生活分享',
     '阅读',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'AD钙的个人博客',
     'AD钙的小屋',
   ],
-  authors: [{ name: 'AD钙', url: 'https://useyeyu.cc' }],
+  authors: [{ name: 'AD钙', url: 'https://xn--ad-036g.xyz' }],
   creator: 'AD钙',
 }
 
