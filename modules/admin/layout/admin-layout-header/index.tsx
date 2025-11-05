@@ -71,8 +71,8 @@ function AdminNavbar() {
           </div>
           {/* 移动端菜单按钮 */}
           <div className="sm:hidden">
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               size="sm"
               onClick={toggleMenu}
             >
@@ -85,14 +85,14 @@ function AdminNavbar() {
           <AvatarDropdownMenu />
         </section>
       </header>
-      
+
       {/* 移动端菜单展开面板 */}
       {isMenuOpen && (
         <div className="sm:hidden fixed top-12 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-dashed z-40 p-4">
           <div className="flex flex-col gap-2">
             {AdminRoutes.map(link => (
-              <Link 
-                href={link.path} 
+              <Link
+                href={link.path}
                 key={link.path}
                 onClick={closeMenu}
               >
