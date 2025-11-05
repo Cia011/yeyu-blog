@@ -1,15 +1,11 @@
 import { Code } from 'lucide-react'
-import Link from 'next/link'
 
 function AdminLogo() {
   return (
-    <Link
-      className="flex items-center gap-1 hover:underline"
-      href="/"
-    >
-      <h2 className="font-bold">姜莱的后台管理界面</h2>
-      <Code size={18} />
-    </Link>
+    <div className="flex items-center gap-1">
+      <h2 className="font-bold text-sm sm:text-base">姜莱的后台管理界面</h2>
+      <Code size={16} className="sm:size-[18px]" />
+    </div>
   )
 }
 

@@ -21,7 +21,7 @@ export default async function AdminLayout({
         <ModalProvider>
           <main className="flex flex-col min-h-screen max-w-screen dark:bg-black dark:text-white">
             <AdminNavbar />
-            <div className="flex-1 px-6 flex mt-2">
+            <div className="flex-1 px-4 sm:px-6 flex mt-2">
               <main className="flex-1 flex">{children}</main>
             </div>
             <Toaster position="top-center" richColors />
