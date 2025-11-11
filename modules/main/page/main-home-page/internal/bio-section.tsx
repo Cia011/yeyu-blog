@@ -4,21 +4,10 @@ export default function BioSection() {
       <h1>
         你好! 我是
         {' '}
-        <span className="font-bold text-purple-400">姜莱</span>
+        <span className="font-bold text-purple-400">Ciao</span>
         ,
       </h1>
-      <p>欢迎来到我的小屋, 我会在这里记录一些日记或者笔记, 感谢你的到来~</p>
-      {/*
-      <p>
-        我是一名喜欢前端开发的大四学
-        <span className="line-through text-pink-500">生</span>
-        牲
-      </p>
-      <p>
-        下面是我常用/喜欢的技术
-        {' '}
-        <span className="text-indigo-400">(〃'▽'〃)</span>
-      </p> */}
+      <p>欢迎来到我的小屋, 我会在这里记录一些技术笔记和生活趣事, 感谢你的到来~</p>
 
       <small className="text-xs md:text-sm">
         话说敲两下头像可以切换主题来着

@@ -2,21 +2,25 @@ import Link from 'next/link'
 
 const ExternalLinks = [
   {
-    name: 'AD钙的小屋',
+    name: 'ciao的技术小站[本页面]',
     url: 'https://xn--ad-036g.xyz/',
   },
-  // {
-  //   name: 'bilibili',
-  //   url: 'https://space.bilibili.com/1859558916',
-  // },
-  // {
-  //   name: '掘金',
-  //   url: 'https://juejin.cn/user/64204896208252',
-  // },
-  // {
-  //   name: 'Gmail',
-  //   url: 'mailto:nearjilt@gmail.com',
-  // },
+  {
+    name: 'BiliBili',
+    url: 'https://space.bilibili.com/651225222',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/Cia011',
+  },
+  {
+    name: 'Gitee',
+    url: 'https://gitee.com/qvqciao',
+  },
+  {
+    name: 'CSDN',
+    url: 'https://blog.csdn.net/QVQciao',
+  },
 ] as const
 
 export default function ContactMe() {

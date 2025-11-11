@@ -14,20 +14,12 @@ export default function AboutPage() {
       <MaxWidthWrapper className="md:text-lg text-center flex items-center justify-center flex-col gap-4 mt-4">
         <p>嘿, 你好呀~👋🏻</p>
         <h2>
-          你可以叫我,
+          我是
           {' '}
-          <span className="font-bold text-purple-400">姜莱</span>
+          <span className="font-bold text-purple-400">ciao</span>
           {' '}
-          ~
+          一名热爱技术的开发者。
         </h2>
-        <h2>
-          也可以叫我,
-          {' '}
-          <span className="font-bold text-purple-400">AD钙</span>
-          {' '}
-          ~
-        </h2>
-        <p>不是很想透露真名, 所以我有很多很多马甲~</p>
       </MaxWidthWrapper>
     </motion.div>
   )

@@ -84,11 +84,11 @@ export default function StartUpMotion() {
       </>
       {/* 两边的遮罩 */}
       <motion.span
-        className="fixed w-1/2 h-screen top-0 left-0 z-40 bg-gradient-to-r from-[#22177A] to-[#000957]"
+        className="fixed w-1/2 h-screen top-0 left-0 z-40 bg-gradient-to-r from-[#3b779b] to-[#26a5ac]"
         style={{ x: toLeft }}
       />
       <motion.span
-        className="fixed w-1/2 h-screen top-0 right-0 z-40 bg-gradient-to-l from-[#22177A] to-[#000957]"
+        className="fixed w-1/2 h-screen top-0 right-0 z-40 bg-gradient-to-l from-[#3b779b] to-[#26a5ac]"
         style={{ x: toRight }}
       />
     </>
