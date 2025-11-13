@@ -2,10 +2,6 @@ import Link from 'next/link'
 
 const ExternalLinks = [
   {
-    name: 'ciao的技术小站[本页面]',
-    url: 'https://xn--ad-036g.xyz/',
-  },
-  {
     name: 'BiliBili',
     url: 'https://space.bilibili.com/651225222',
   },
